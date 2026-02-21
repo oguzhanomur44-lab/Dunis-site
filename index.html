@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Özür Çiçeği</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(#87CEEB, #ffffff);
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    .toprak {
+        width: 200px;
+        height: 100px;
+        background: #5a3e2b;
+        border-radius: 100px 100px 0 0;
+        position: relative;
+    }
+
+    .tohum {
+        width: 15px;
+        height: 15px;
+        background: brown;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .cicek {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        transition: transform 2s ease;
+    }
+
+    .govde {
+        width: 6px;
+        height: 80px;
+        background: green;
+        margin: auto;
+    }
+
+    .bas {
+        width: 40px;
+        height: 40px;
+        background: pink;
+        border-radius: 50%;
+        margin: auto;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        background: #4CAF50;
+        color: white;
+    }
+
+    .kalp {
+        position: absolute;
+        top: 20%;
+        font-size: 30px;
+        color: red;
+        opacity: 0;
+        transition: opacity 2s;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="toprak">
+    <div class="tohum"></div>
+    <div class="cicek" id="cicek">
+        <div class="bas"></div>
+        <div class="govde"></div>
+    </div>
+</div>
+
+<button onclick="sula()">💧 Sula</button>
+
+<div class="kalp" id="kalp">
+    ❤️<br>
+    Özür dilerim dunisimmm
+</div>
+
+<script>
+function sula() {
+    document.getElementById("cicek").style.transform = "translateX(-50%) scale(1)";
+    
+    setTimeout(() => {
+        document.getElementById("kalp").style.opacity = "1";
+    }, 2000);
+}
+</script>
+
+</body>
+</html>
